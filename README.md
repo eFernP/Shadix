@@ -1,1 +1,1 @@
-"# Shadix" 
+# Shadix
