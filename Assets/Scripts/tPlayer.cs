@@ -428,23 +428,10 @@ public class tPlayer : MonoBehaviour {
                 Destroy(currentCube.gameObject, 2f);
             }
 
-            lineDestroyed = true;
-            nLineDestroyed = line;
-            /*
-            //Move down all the cubes put on the destroyed line
-            for (int i = (line+1)*5; i < 45; i++)
-            {
-                if (board[i] == true)
-                {
-                    GameObject currentCube = GameObject.Find("cube" + i);
-                    currentCube.transform.position = new Vector3(currentCube.transform.position.x, currentCube.transform.position.y - 1.2f, currentCube.transform.position.z);
-                    board[i] = false;
-                    board[i - 5] = true;
-                    currentCube.gameObject.name = "cube" + (i - 5);
-                }
-            }
-            */
-            tPlayer.score += 100;
+           
+           downOneLine(line);
+                    
+           tPlayer.score += 100;
 
             
             
@@ -742,7 +729,7 @@ public class tPlayer : MonoBehaviour {
     }
 
 
-    void downOneLine(int line)
+   static void downOneLine(int line)
     {
         //Move down all the cubes put on the destroyed line
         for (int i = (line + 1) * 5; i < 45; i++)
